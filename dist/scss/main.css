@@ -145,6 +145,7 @@ a {
   padding: 1rem;
 }
 .header .nav-links li a {
+  white-space: nowrap;
   padding: 0.3rem 0.8rem;
   position: relative;
 }
