@@ -10,7 +10,8 @@
     <link rel="shortcut icon" href="./assets/logo/logo.svg" type="image/x-icon">
 </head>
 
-<body>
+<body class="preload">
+    <!-- header  -->
     <header>
         <div class="header flex flex-row items-center justify-between max-width">
             <div class="logo flex flex-row items-center gap-0">
@@ -42,14 +43,71 @@
 
         </div>
     </header>
+
+    <!-- main  -->
     <main>
+
+        <!-- hero section  -->
+        <section class="hero">
+            <div class="hero-container max-width">
+                <div class="hero-container-text">
+                    <div class="text-1 flex">
+                        <h1>home with the</h1>
+                        <div>
+                            <svg width="109" height="109" viewBox="0 0 109 109" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M44.3187 26.3516L25.1538 7.18681L8.38461 22.7582L28.7473 43.1209H0L1.1978 64.6813L28.7473 65.8791L10.7802 83.8462L25.1538 98.2198L44.3187 81.4505V109H65.8791V79.0549L85.044 98.2198L99.4176 83.8462L82.6484 64.6813H109V43.1209H82.6484L99.4176 23.956L85.044 9.58242L65.8791 27.5494V0H44.3187V26.3516Z"
+                                    fill="#96FF01" />
+                            </svg>
+
+                        </div>
+                        <h1>best</h1>
+                    </div>
+                    <div class="text-1 text-2 flex">
+                        <h1>price</h1>
+                        <div>
+
+                            <svg width="205" height="105" viewBox="0 0 205 105" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="205" height="104.856" rx="52.4282" fill="#96FF01" />
+                                <circle cx="148.448" cy="51.8391" r="43.592" fill="#0F0F0F" />
+                                <path
+                                    d="M147.265 18.5293C147.553 16.4742 150.522 16.4742 150.81 18.5293L154.251 43.0617C154.391 44.0653 155.336 44.752 156.334 44.5757L180.729 40.267C182.773 39.9061 183.69 42.7295 181.825 43.6386L159.556 54.4918C158.645 54.9358 158.284 56.0469 158.76 56.9416L170.397 78.8111C171.371 80.643 168.97 82.388 167.529 80.8948L150.325 63.0701C149.621 62.3409 148.453 62.3409 147.749 63.0701L130.546 80.8948C129.105 82.388 126.703 80.643 127.678 78.811L139.314 56.9416C139.79 56.0469 139.429 54.9358 138.518 54.4918L116.25 43.6386C114.384 42.7295 115.302 39.9061 117.345 40.267L141.74 44.5757C142.738 44.752 143.683 44.0653 143.824 43.0617L147.265 18.5293Z"
+                                    fill="#96FF01" />
+                            </svg>
+
+
+                        </div>
+                        <h1>And quality</h1>
+                    </div>
+                    <div class="text-p">
+                        <p>Modern and elegant design for our customers</p>
+                        <div class="line">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-container-image">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop"
+                        alt="img">
+                </div>
+            </div>
+        </section>
 
     </main>
 
     <script>
+
+
+        window.addEventListener("load", () => {
+        })
+
         const menu = document.querySelector('.hamMenu')
         const nav = document.querySelector('.nav')
         menu.addEventListener("click", () => {
+            document.body.classList.remove("preload")
             nav.classList.toggle("active")
             menu.classList.toggle("active")
         })

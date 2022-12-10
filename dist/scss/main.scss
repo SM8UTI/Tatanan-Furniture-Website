@@ -78,6 +78,10 @@ a{
     text-decoration: none;
 }
 
+.preload * {
+    transition: none !important;
+}
+
 // util classes 
 
 .max-width{
@@ -327,6 +331,128 @@ a{
     .header{
         .nav{
             width: 70%;
+        }
+    }
+}
+
+// hero 
+
+.hero{
+    padding: 1rem;
+    &-container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        &-text{
+            display: flex;
+            flex-direction: column;
+
+            .text-1{
+                width: 100%;
+                text-transform: uppercase;
+                align-items: center;
+                justify-content: center;
+                white-space: nowrap;
+
+                @include breakpoint-down(small){
+                    height: 5rem;
+                }
+
+                @include breakpoint-down(mobile){
+                    height: 12vh;
+                }
+
+                @media (max-width:610px) {
+                    height: 7vh;
+                }
+
+
+                h1{
+                    font-family: var(--ffp);
+                    font-weight: 700;
+                    font-size: clamp(1.6rem,7.5vw,8rem);
+
+                    @media (min-width:1376px) {
+                        font-size: 6.3rem;
+                    }
+                }
+                div{
+                    margin-inline: 1rem;
+                    svg{
+                        width: 8vw;
+                    }
+
+                    @include breakpoint-down(mobile){
+                        margin-inline: 0.4rem;
+                    }
+                }         
+            }
+
+            .text-2{
+                @media (min-width:1300px) {
+                    justify-content: space-between;
+                }
+                div{
+                    svg{
+                        width: 12vw;
+                    }
+                }
+            }
+
+            .text-p{
+                width: 100%;
+                margin-top: 1rem;
+
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                gap: 0.5rem;
+                // padding-inline: 2rem;
+                p{
+                    display: inline-block;
+                    font-size: 0.8rem;
+                    color: var(--tc);
+                    white-space: nowrap;
+
+                    @include breakpoint(small){
+                        font-size: var(--sm-16);
+                    }
+                }
+                .line{
+                    width: 100%;
+                    height: 0.25rem;
+                    background-color: var(--bgp);
+                    position: relative;
+                    border-radius: 1rem;
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        right: 0;
+                        width: 0.8rem;
+                        aspect-ratio: 1;
+                        background-color: var(--bgp);
+                        border-radius: 50%;
+                    }
+                }
+
+            }
+        }
+
+        &-image{
+            width: 100%;
+            height: 100%;
+            max-height: 80vh;
+            overflow: hidden;
+            
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
