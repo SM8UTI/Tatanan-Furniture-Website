@@ -17,6 +17,19 @@
   --sm-16:1rem;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--bgp);
+}
+
 *, *::after, *::before {
   box-sizing: border-box;
   margin: 0;
@@ -116,6 +129,10 @@ a {
 }
 .btn:hover {
   opacity: 80%;
+}
+
+.mt-4 {
+  margin-top: 4rem;
 }
 
 .hamMenu {
@@ -339,13 +356,203 @@ a {
 .hero-container-image {
   width: 100%;
   height: 100%;
-  max-height: 80vh;
   overflow: hidden;
+  border-radius: 1rem;
 }
 .hero-container-image img {
+  max-height: 80vh;
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 47.937rem) {
+  .hero-container-image img {
+    max-height: 100vh;
+  }
+}
+
+.heading {
+  padding-inline: 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.heading h1 {
+  display: block;
+  font-size: var(--md-32);
+  position: relative;
+  text-transform: uppercase;
+}
+.heading h1::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 0.3rem;
+  background-color: var(--bgp);
+  border-radius: 1rem;
+}
+
+.row-text {
+  padding-inline: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+.row-text .col h1 {
+  font-family: var(--ffp);
+  padding-right: 2rem;
+  font-size: var(--md-40);
+  color: var(--bgw);
+  text-transform: capitalize;
+}
+.row-text .col h1 span {
+  color: var(--bgp);
+}
+.row-text .col p {
+  font-size: var(--sm-16);
+  color: var(--tc);
+  line-height: 1.7;
+}
+@media (min-width: 50.625em) {
+  .row-text {
+    place-items: center;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+  }
+  .row-text .col h1 {
+    padding-right: 0;
+    font-size: var(--md-64);
+  }
+}
+@media (min-width: 65em) {
+  .row-text {
+    grid-template-columns: 1fr 1fr;
+  }
+  .row-text .col h1 {
+    padding-right: 2rem;
+  }
+}
+
+.tc-green {
+  color: var(--bgp) !important;
+}
+
+.company-stats {
+  margin-top: 2rem;
+  padding-inline: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.company-stats .stats {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.company-stats .stats h2 {
+  font-size: var(--md-40);
+  font-family: var(--ffp);
+}
+.company-stats .stats p {
+  font-size: var(--sm-16);
+  color: var(--tc);
+}
+.company-stats .stats:hover {
+  color: var(--bgp) !important;
+}
+.company-stats .stats:hover p {
+  color: var(--bgp);
+}
+@media (min-width: 50.625em) {
+  .company-stats {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 3rem;
+  }
+}
+
+.projects {
+  padding: 0 1rem;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.projects .col {
+  height: 100%;
+  width: 100%;
+}
+.projects .col h1 {
+  font-family: var(--ffp);
+  font-size: var(--md-40);
+}
+.projects .col h1 span {
+  color: var(--bgp);
+}
+.projects .col p {
+  margin-top: 1rem;
+  color: var(--tc);
+  font-size: var(--sm-16);
+  line-height: 1.7;
+}
+.projects .col img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 25rem;
+  border-radius: 1rem;
+}
+@media (min-width: 35.625rem) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    grid-template-areas: "b2 b1" "b3 b3" "b4 b5";
+  }
+  .projects .col h1 {
+    font-size: var(--md-64);
+  }
+  .projects .col-text {
+    grid-area: b1;
+  }
+  .projects .col-img-1 {
+    grid-area: b2;
+  }
+  .projects .col-img-2 {
+    grid-area: b3;
+  }
+  .projects .col-img-3 {
+    grid-area: b4;
+  }
+  .projects .col-img-4 {
+    grid-area: b5;
+  }
+}
+@media (min-width: 65em) {
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "b2 b3 b1" "b4 b4 b5";
+  }
+}
+
+.green-text {
+  margin-top: 4rem;
+  padding: 4rem 1rem;
+  background-color: var(--bgp);
+  color: var(--bg);
+  text-align: center;
+  line-height: 1.7;
+  font-family: var(--ffp);
+  font-size: 1.5rem;
+}
+@media (min-width: 65em) {
+  .green-text {
+    font-size: var(--md-32);
+  }
+  .green-text-container {
+    padding-inline: 2rem;
+  }
 }/*# sourceMappingURL=main.css.map */
