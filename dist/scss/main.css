@@ -131,6 +131,11 @@ a {
   color: var(--bg);
   font-weight: 500;
 }
+@media (max-width: 63.9375em) {
+  .btn-register {
+    margin-right: 4rem;
+  }
+}
 .btn:hover {
   opacity: 80%;
 }
@@ -141,10 +146,10 @@ a {
 
 .hamMenu {
   position: fixed;
-  top: 1rem;
+  top: 0.5rem;
   right: 1rem;
   background-color: var(--bg);
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0.5rem;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -155,6 +160,11 @@ a {
   padding: 0.4rem;
   cursor: pointer;
   z-index: 9999;
+}
+@media (max-width: 47.937rem) {
+  .hamMenu {
+    right: 1rem;
+  }
 }
 .hamMenu span {
   display: inline-block;
@@ -227,6 +237,7 @@ a {
     rotate: -45deg;
   }
   .header .nav {
+    z-index: 9999;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -393,6 +404,7 @@ a {
   font-size: var(--md-32);
   position: relative;
   text-transform: uppercase;
+  font-weight: 500;
 }
 .heading h1::after {
   content: "";
@@ -403,6 +415,11 @@ a {
   height: 0.3rem;
   background-color: var(--bgp);
   border-radius: 1rem;
+}
+@media (max-width: 47.937rem) {
+  .heading h1 {
+    font-size: 1.2rem;
+  }
 }
 
 .row-text {
@@ -480,6 +497,26 @@ a {
     grid-template-columns: repeat(4, 1fr);
     margin-top: 3rem;
   }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+.swiper-slide a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .projects {
@@ -564,5 +601,100 @@ a {
   }
   .green-text-container {
     padding-inline: 2rem;
+  }
+}
+
+.faq-text-h1 {
+  padding: 0 1rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--ffp);
+  text-transform: capitalize;
+}
+.faq-text-h1 span {
+  color: var(--bgp);
+}
+.faq-container {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.faq-container .question {
+  cursor: pointer;
+  border-top: 2px solid var(--tc);
+}
+.faq-container .question:first-child {
+  border-top: none;
+}
+.faq-container .question-heading {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.faq-container .question-heading h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.faq-container .question-heading div div {
+  position: relative;
+  width: 50px;
+  aspect-ratio: 1;
+}
+.faq-container .question-heading div div span {
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 0.2rem;
+  background-color: var(--bgw);
+  transform-origin: 0 0;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.faq-container .question-heading div div span:first-child {
+  rotate: 90deg;
+  top: 23%;
+  left: 54%;
+  translate: 0% 0%;
+}
+.faq-container .question-heading div div span:last-child {
+  top: 50%;
+  left: 50%;
+  translate: -50% 0;
+}
+.faq-container .question-ans {
+  overflow: hidden;
+  height: 0;
+}
+.faq-container .question-ans p {
+  padding-top: 1rem;
+  color: var(--tc);
+  font-size: 1rem;
+  line-height: 1.7;
+  translate: 0 -100%;
+  transition: translate 0.5s ease-in-out;
+}
+.faq .question.active .question-heading div div span:first-child {
+  rotate: 0deg;
+  top: 50%;
+  left: 50%;
+  translate: -50% 0;
+}
+.faq .question.active .question-ans {
+  height: 100%;
+}
+.faq .question.active .question-ans p {
+  translate: 0 0;
+}
+@media (min-width: 50.625em) {
+  .faq-text-h1 {
+    font-size: var(--md-64);
+  }
+  .faq .question-heading h1 {
+    font-size: var(--sm-24);
   }
 }/*# sourceMappingURL=main.css.map */
